@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { 
+  title, 
+  description = "Pizzería Artesanal - El sabor auténtico de la tradición en cada rebanada. Pizzas hechas a mano con ingredientes frescos." 
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://pizzeria-artesanal.example.com');
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SEO -->
+		<title>{title}</title>
+		<link rel="canonical" href={canonicalURL} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/og-image.jpg" />
+
+		<!-- Meta para búsqueda local -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				"name": "Pizzería Artesanal Tradición",
+				"image": "https://pizzeria-artesanal.example.com/logo.jpg",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "Calle Ficticia 123",
+					"addressLocality": "Ciudad Real",
+					"addressRegion": "CR",
+					"postalCode": "12345",
+					"addressCountry": "ES"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": 40.416775,
+					"longitude": -3.703790
+				},
+				"url": "https://pizzeria-artesanal.example.com",
+				"telephone": "+34123456789",
+				"openingHoursSpecification": [
+					{
+						"@type": "OpeningHoursSpecification",
+						"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+						"opens": "18:00",
+						"closes": "23:30"
+					}
+				]
+			}
+		</script>
+	</head>
+	<body>
+		<slot />
+		
+		<script>
+			// Script para revelación suave de elementos al hacer scroll
+			const observerOptions = {
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('active');
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,286 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/home.css';
+
+const pizzas = [
+  {
+    name: "Margherita Clásica",
+    price: "12.90",
+    ingredients: "Tomate San Marzano, mozzarella di bufala, albahaca fresca, aceite de oliva virgen.",
+    image: "https://images.pexels.com/photos/6605220/pexels-photo-6605220.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    name: "Pepperoni Supremo",
+    price: "14.50",
+    ingredients: "Doble ración de pepperoni artesanal, mozzarella, salsa de la casa, orégano.",
+    image: "https://images.pexels.com/photos/32605621/pexels-photo-32605621.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    name: "Huerta Silvestre",
+    price: "13.80",
+    ingredients: "Pimientos asados, calabacín, champiñones portobello, cebolla morada, olivas negras.",
+    image: "https://images.pexels.com/photos/28866022/pexels-photo-28866022.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    name: "Cuatro Quesos de la Sierra",
+    price: "15.20",
+    ingredients: "Gorgonzola, parmesano reggiano, mozzarella, queso de cabra local.",
+    image: "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    name: "Prosciutto e Rucola",
+    price: "16.50",
+    ingredients: "Salsa de tomate, mozzarella fior di latte, prosciutto crudo, rúcula fresca, lascas de parmesano.",
+    image: "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    name: "Rústica de Champiñones",
+    price: "14.20",
+    ingredients: "Base blanca, mozzarella, mezcla de setas de temporada, aceite de trufa blanca, tomillo.",
+    image: "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    name: "Barbacoa Ahumada",
+    price: "15.80",
+    ingredients: "Ternera desmechada, bacon ahumado, cebolla caramelizada, mozzarella, salsa barbacoa casera.",
+    image: "https://images.pexels.com/photos/1435900/pexels-photo-1435900.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    name: "Mediterránea",
+    price: "13.50",
+    ingredients: "Tomates cherry confitados, aceitunas kalamata, queso feta, albahaca, anchoas del Cantábrico.",
+    image: "https://images.pexels.com/photos/31596394/pexels-photo-31596394.jpeg?auto=compress&cs=tinysrgb&w=800"
+  }
+];
+---
+
+<Layout title="Tradición Artesanal | Pizzería de Autor">
+	
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="logo">
+        <span class="logo-text">TRADICIÓN</span>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#inicio" class="menu-item">Inicio</a></li>
+          <li><a href="#menu" class="menu-item">Menú</a></li>
+          <li><a href="#nosotros" class="menu-item">Nosotros</a></li>
+          <li><a href="#contacto" class="menu-item">Contacto</a></li>
+        </ul>
+        <a href="https://wa.me/34123456789" class="btn btn-primary nav-cta">Haz tu pedido</a>
+      </div>
+    </div>
+  </header>
+
+	<main>
+    <!-- Hero Section -->
+		<section id="inicio" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-container">
+        <div class="hero-content reveal">
+          <span class="hero-tag">Pizzería Artesanal</span>
+          <h1>El Sabor de la <br/><span class="text-accent">Leña y Tradición</span></h1>
+          <p>Masa madurada 48 horas, ingredientes de la huerta y el toque maestro de nuestro horno de piedra.</p>
+          <div class="hero-btns">
+            <a href="#menu" class="btn btn-primary">Ver Menú</a>
+            <a href="#nosotros" class="btn btn-outline">Nuestra Historia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menú Section -->
+    <section id="menu" class="menu-section py-lg">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <h2 class="section-title">Nuestro Menú</h2>
+          <p class="section-subtitle">Selección de pizzas de autor hechas con amor</p>
+        </div>
+        
+        <div class="carousel-container">
+          <div class="menu-carousel">
+            {pizzas.map((pizza) => (
+              <div class="menu-card reveal">
+                <div class="card-img">
+                  <img src={pizza.image} alt={pizza.name} loading="lazy" />
+                  <span class="price-tag">${pizza.price}</span>
+                </div>
+                <div class="card-body">
+                  <h3>{pizza.name}</h3>
+                  <p>{pizza.ingredients}</p>
+                  <button class="btn-card">Añadir al pedido</button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="carousel-nav">
+            <button class="nav-btn prev" id="prevBtn">←</button>
+            <button class="nav-btn next" id="nextBtn">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="about-section py-lg bg-secondary">
+      <div class="container about-grid">
+        <div class="about-img reveal">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1000&auto=format&fit=crop" alt="Cocinando pizza" class="rounded-lg shadow-lg" />
+        </div>
+        <div class="about-content reveal">
+          <h2 class="section-title">Auténticos desde 1995</h2>
+          <p class="lead">Nuestra historia comienza en un pequeño rincón del Mediterráneo, con una receta familiar y un sueño: traer el sabor puro de Italia a tu mesa.</p>
+          <p>Creemos en la paciencia. Por eso, nuestra masa descansa durante dos días enteros para lograr esa textura crujiente por fuera y aireada por dentro que nos caracteriza. Usamos solo harina de fuerza orgánica y productos locales de temporada.</p>
+          <p>Cada pizza que sale de nuestro horno lleva un pedazo de nuestra pasión y compromiso con la calidad artesanal.</p>
+          <a href="#contacto" class="btn btn-accent mt-md">Visítanos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contact-section py-lg">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <h2 class="section-title">Contacto & Ubicación</h2>
+          <p class="section-subtitle">¿Tienes hambre? Estamos aquí para servirte</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="info-item">
+              <i class="icon-phone"></i>
+              <div>
+                <h4>Llámanos o WhatsApp</h4>
+                <p>+34 123 456 789</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="icon-location"></i>
+              <div>
+                <h4>Visítanos</h4>
+                <p>Calle Ficticia 123, Ciudad Real, España</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="icon-clock"></i>
+              <div>
+                <h4>Horario</h4>
+                <p>Mar - Dom: 18:00 - 23:30</p>
+                <p>Lunes: Cerrado</p>
+              </div>
+            </div>
+            <div class="social-grid mt-md">
+              <a href="#" class="social-icon-btn" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="#" class="social-icon-btn" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </a>
+              <a href="#" class="social-icon-btn" aria-label="TikTok">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-map reveal">
+            <!-- Google Maps Embebido -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12150.60331006096!2d-3.7037902!3d40.4167754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sPuerta%20del%20Sol!5e0!3m2!1ses!2ses!4v1714000000000!5m2!1ses!2ses" 
+              width="100%" 
+              height="400" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-lg shadow-md"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+	</main>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/34123456789" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>TRADICIÓN</h3>
+        <p>El arte de la pizza al horno de piedra.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <div class="social-grid">
+          <a href="#" class="social-icon-btn" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-icon-btn" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pizzería Tradición Artesanal. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  const carousel = document.querySelector('.menu-carousel');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (carousel && prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  }
+
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  if (mobileBtn && navMenu) {
+    mobileBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+</script>
+
+
