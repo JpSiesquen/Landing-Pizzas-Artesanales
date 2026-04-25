@@ -1,43 +1,68 @@
-# Astro Starter Kit: Minimal
+# 🍕 Pizzería Tradición Artesanal - Landing Page
 
-```sh
-npm create astro@latest -- --template minimal
-```
+¡Bienvenido al repositorio de la landing page de **Pizzería Tradición Artesanal**! 🌿🍅
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Este proyecto es una página web moderna, altamente responsiva y optimizada para la conversión, diseñada específicamente para destacar el carácter auténtico y rústico-moderno de una pizzería de autor.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## ✨ Características Principales
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- 📱 **Diseño 100% Responsive**: Experiencia de usuario perfecta en dispositivos móviles, tablets y ordenadores de escritorio.
+- 🎡 **Menú Interactivo en Carrusel**: Una visualización de pizzas dinámica (optimizada con *scroll snap*) para que los clientes hojeen las opciones cómodamente.
+- 🎨 **Interfaz Premium (UI)**: Paleta de colores vibrante (Rojo Tomate, Amarillo Queso, Gris Naval) y animaciones sutiles (hover effects, menú hamburguesa deslizable).
+- 💬 **Integración con WhatsApp**: Botón flotante permanente para que los clientes hagan sus pedidos con un solo toque.
+- 🗺️ **SEO Local & Mapa**: Integración de Google Maps y microformatos semánticos preparados para posicionamiento en búsquedas locales.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🛠️ Tecnologías Usadas
 
-Any static assets, like images, can be placed in the `public/` directory.
+Este proyecto ha sido desarrollado con un enfoque en rendimiento extremo y código limpio, utilizando el siguiente *stack*:
 
-## 🧞 Commands
+- 🚀 **[Astro](https://astro.build/)**: Framework elegido por su velocidad inigualable, generando HTML estático ultrarrápido (SSG).
+- 🎨 **CSS3 (Vanilla)**: Sistema de diseño y variables construidas desde cero sin depender de librerías externas pesadas (como Bootstrap o Tailwind).
+- ⚡ **JavaScript (Vanilla)**: Lógica ligera para el menú hamburguesa y los controles del carrusel, priorizando el rendimiento sin sobrecargar el navegador.
+- 🌐 **HTML5 Semántico**: Estructura accesible y optimizada para SEO.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🚀 Cómo ejecutar el proyecto localmente
 
-## 👀 Want to learn more?
+Si deseas descargar el código y probarlo en tu propia máquina, sigue estos sencillos pasos:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/tu-usuario/Landing-Pizzas-Artesanales.git
+   ```
+
+2. **Entra en el directorio:**
+   ```bash
+   cd Landing-Pizzas-Artesanales
+   ```
+
+3. **Instala las dependencias:**
+   ```bash
+   npm install
+   ```
+
+4. **Inicia el servidor de desarrollo:**
+   ```bash
+   npm run dev
+   ```
+   
+5. **Abre tu navegador:**
+   Visita `http://localhost:4321` y ¡empieza a explorar!
+
+---
+
+## 📂 Estructura del Código
+
+- `src/pages/index.astro`: El corazón de la aplicación, contiene toda la estructura de la landing page.
+- `src/layouts/Layout.astro`: La plantilla principal con la cabecera (head), metadatos SEO y tipografías.
+- `src/styles/global.css`: Variables de la paleta de colores y estilos globales base.
+- `src/styles/home.css`: Estilos específicos para las secciones, el carrusel y las *media queries* responsivas.
+
+---
+
+> 👨‍🍳 **"El Sabor de la Leña y Tradición."** - Hecho con ❤️ y mucho queso.
