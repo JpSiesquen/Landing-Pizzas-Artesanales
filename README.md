@@ -1,68 +1,42 @@
-# 🍕 Pizzería Tradición Artesanal - Landing Page
+﻿# Tradicion Artesanal
 
-¡Bienvenido al repositorio de la landing page de **Pizzería Tradición Artesanal**! 🌿🍅
+Landing page for an artisan wood-fired pizzeria. Menu carousel, story section, contact block and WhatsApp CTA, built for conversion on mobile and desktop.
 
-Este proyecto es una página web moderna, altamente responsiva y optimizada para la conversión, diseñada específicamente para destacar el carácter auténtico y rústico-moderno de una pizzería de autor.
+[![Live demo](https://img.shields.io/badge/demo-vercel-black?style=for-the-badge&logo=vercel&logoColor=white)](https://landing-pizzas-artesanales.vercel.app)
 
----
+![Desktop hero of Tradicion Artesanal](docs/assets/hero-desktop.png)
 
-## ✨ Características Principales
+**Demo:** https://landing-pizzas-artesanales.vercel.app
 
-- 📱 **Diseño 100% Responsive**: Experiencia de usuario perfecta en dispositivos móviles, tablets y ordenadores de escritorio.
-- 🎡 **Menú Interactivo en Carrusel**: Una visualización de pizzas dinámica (optimizada con *scroll snap*) para que los clientes hojeen las opciones cómodamente.
-- 🎨 **Interfaz Premium (UI)**: Paleta de colores vibrante (Rojo Tomate, Amarillo Queso, Gris Naval) y animaciones sutiles (hover effects, menú hamburguesa deslizable).
-- 💬 **Integración con WhatsApp**: Botón flotante permanente para que los clientes hagan sus pedidos con un solo toque.
-- 🗺️ **SEO Local & Mapa**: Integración de Google Maps y microformatos semánticos preparados para posicionamiento en búsquedas locales.
+## What it includes
 
----
+- Full-bleed hero with primary and secondary CTAs
+- Interactive menu carousel (scroll-snap)
+- Story / contact sections and floating WhatsApp button
+- Semantic HTML and CSS variables (no UI framework)
 
-## 🛠️ Tecnologías Usadas
+## Stack
 
-Este proyecto ha sido desarrollado con un enfoque en rendimiento extremo y código limpio, utilizando el siguiente *stack*:
+Astro · HTML · CSS · Vanilla JavaScript · Vercel
 
-- 🚀 **[Astro](https://astro.build/)**: Framework elegido por su velocidad inigualable, generando HTML estático ultrarrápido (SSG).
-- 🎨 **CSS3 (Vanilla)**: Sistema de diseño y variables construidas desde cero sin depender de librerías externas pesadas (como Bootstrap o Tailwind).
-- ⚡ **JavaScript (Vanilla)**: Lógica ligera para el menú hamburguesa y los controles del carrusel, priorizando el rendimiento sin sobrecargar el navegador.
-- 🌐 **HTML5 Semántico**: Estructura accesible y optimizada para SEO.
+## Run locally
 
----
+Requires Node.js 22+.
 
-## 🚀 Cómo ejecutar el proyecto localmente
+```bash
+git clone https://github.com/JpSiesquen/Landing-Pizzas-Artesanales.git
+cd Landing-Pizzas-Artesanales
+npm install
+npm run dev
+```
 
-Si deseas descargar el código y probarlo en tu propia máquina, sigue estos sencillos pasos:
+Open the URL printed by Astro (usually `http://localhost:4321`).
 
-1. **Clona el repositorio:**
-   ```bash
-   git clone https://github.com/tu-usuario/Landing-Pizzas-Artesanales.git
-   ```
+```bash
+npm run build
+npm run preview
+```
 
-2. **Entra en el directorio:**
-   ```bash
-   cd Landing-Pizzas-Artesanales
-   ```
+## Author
 
-3. **Instala las dependencias:**
-   ```bash
-   npm install
-   ```
-
-4. **Inicia el servidor de desarrollo:**
-   ```bash
-   npm run dev
-   ```
-   
-5. **Abre tu navegador:**
-   Visita `http://localhost:4321` y ¡empieza a explorar!
-
----
-
-## 📂 Estructura del Código
-
-- `src/pages/index.astro`: El corazón de la aplicación, contiene toda la estructura de la landing page.
-- `src/layouts/Layout.astro`: La plantilla principal con la cabecera (head), metadatos SEO y tipografías.
-- `src/styles/global.css`: Variables de la paleta de colores y estilos globales base.
-- `src/styles/home.css`: Estilos específicos para las secciones, el carrusel y las *media queries* responsivas.
-
----
-
-> 👨‍🍳 **"El Sabor de la Leña y Tradición."** - Hecho con ❤️ y mucho queso.
+**Jonathan Siesquen** · [GitHub](https://github.com/JpSiesquen) · [LinkedIn](https://www.linkedin.com/in/jpsiesquen/)
